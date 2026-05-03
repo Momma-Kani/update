@@ -122,7 +122,7 @@ const App = () => {
 
           {/* Headline */}
           <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-none">
-            Build Anything.
+            Build <span className="text-cyan-400">Anything.</span>
             <br />
             <span className="bg-gradient-to-r from-violet-500 via-pink-500 to-amber-500 bg-clip-text text-transparent animate-gradient">
               Instantly.
