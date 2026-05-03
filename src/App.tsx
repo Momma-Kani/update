@@ -46,6 +46,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-[#0A0A0F] text-white font-sans">
+      <div className="shimmer-overlay" />
       <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
@@ -55,12 +56,32 @@ const App = () => {
           0% { background-position: 0% center; }
           100% { background-position: 200% center; }
         }
+        @keyframes shimmer-sweep {
+          0% { transform: translateX(-100%) rotate(25deg); }
+          100% { transform: translateX(200%) rotate(25deg); }
+        }
         .animate-float {
           animation: float ease-in-out infinite;
         }
         .animate-gradient {
           animation: gradient-shift 4s ease infinite;
           background-size: 200% auto;
+        }
+        .shimmer-overlay {
+          pointer-events: none;
+          position: fixed;
+          top: -50%;
+          left: -50%;
+          width: 40px;
+          height: 200%;
+          background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.06) 50%,
+            transparent 100%
+          );
+          animation: shimmer-sweep 4s ease-in-out infinite;
+          z-index: 9999;
         }
       `}</style>
 
