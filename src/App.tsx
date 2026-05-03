@@ -72,7 +72,7 @@ const App = () => {
           position: fixed;
           top: -50%;
           left: -50%;
-          width: 40px;
+          width: 200px;
           height: 200%;
           background: linear-gradient(
             90deg,
