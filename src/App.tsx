@@ -113,7 +113,7 @@ const App = () => {
         <div className="relative z-10 text-center px-6 w-full max-w-5xl">
           {/* Pill Badge */}
           <div className="mb-8">
-            <div className="inline-block bg-gradient-to-r from-violet-500 to-pink-500 p-[1px] rounded-full">
+            <div className="inline-block bg-gradient-to-r from-cyan-400 to-cyan-600 p-[1px] rounded-full">
               <div className="bg-[#0A0A0F] rounded-full px-5 py-2 text-sm text-white font-medium">
                 ✦ Welcome to Code Studio
               </div>
