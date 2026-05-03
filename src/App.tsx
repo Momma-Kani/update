@@ -122,7 +122,7 @@ const App = () => {
 
           {/* Headline */}
           <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-none">
-            Build <span className="text-cyan-400">Anything.</span>
+            Build <span style={{ color: 'cyan', WebkitTextStroke: '1.5px #FAFF00', textShadow: '0 0 8px #FAFF00, 0 0 20px #FAF00aa' }}>Anything.</span>
             <br />
             <span className="bg-gradient-to-r from-violet-500 via-pink-500 to-amber-500 bg-clip-text text-transparent animate-gradient">
               Instantly.
@@ -206,36 +206,4 @@ const App = () => {
               className="w-full bg-transparent border-none outline-none resize-none text-gray-300 placeholder-gray-500 h-24 text-lg cursor-not-allowed"
             />
             <div className="flex justify-between items-center mt-4">
-              <span className="text-gray-500 text-sm">Powered by Poía ✦</span>
-              <span className="px-6 py-2 bg-gradient-to-r from-violet-500 to-pink-500 text-white font-semibold rounded-full text-sm opacity-75 cursor-not-allowed">
-                Build it →
-              </span>
-            </div>
-          </div>
-
-          {/* Suggestion Chips */}
-          <div className="flex flex-wrap gap-3 justify-center mt-8">
-            {suggestionChips.map((chip) => (
-              <div
-                key={chip}
-                className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300 hover:bg-white/10 hover:border-violet-500/40 cursor-pointer transition-all duration-300"
-              >
-                {chip}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="py-12 text-center border-t border-white/5">
-        <p className="text-gray-500 text-sm">Made with Poía · Code Studio</p>
-        <p className="mt-2 text-lg font-semibold bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent cursor-pointer hover:opacity-80 transition-opacity">
-          Start your build today →
-        </p>
-      </footer>
-    </div>
-  );
-};
-
-export default App;
+              <span className="text-gray-
