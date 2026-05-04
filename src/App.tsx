@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 const App = () => {
   const capabilityCards = [
     {
@@ -44,6 +46,29 @@ const App = () => {
 
   const suggestionChips = ["🛒 An online shop", "📅 A booking page", "🎵 A music player UI"];
 
+  useEffect(() => {
+    const sparkles: HTMLDivElement[] = [];
+    const colors = ['#ffffff', '#c4b5fd', '#f0abfc', '#67e8f9', '#fde68a'];
+    for (let i = 0; i < 60; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.className = 'sparkle';
+      sparkle.style.left = Math.random() * 100 + '%';
+      sparkle.style.top = Math.random() * 100 + '%';
+      const size = Math.random() * 3 + 2; // 2px to 5px
+      sparkle.style.width = size + 'px';
+      sparkle.style.height = size + 'px';
+      sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      sparkle.style.animationDuration = (Math.random() * 2.5 + 1.5) + 's';
+      sparkle.style.animationDelay = Math.random() * 4 + 's';
+      sparkle.style.opacity = '0';
+      document.body.appendChild(sparkle);
+      sparkles.push(sparkle);
+    }
+    return () => {
+      sparkles.forEach(sparkle => sparkle.remove());
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#0A0A0F] text-white font-sans">
       <div className="shimmer-overlay" />
@@ -59,6 +84,10 @@ const App = () => {
         @keyframes shimmer-sweep {
           0% { transform: translateX(-100%) rotate(25deg); }
           100% { transform: translateX(200%) rotate(25deg); }
+        }
+        @keyframes twinkle {
+          0%, 100% { opacity: 0; transform: scale(0.5); }
+          50% { opacity: 1; transform: scale(1); }
         }
         .animate-float {
           animation: float ease-in-out infinite;
@@ -82,6 +111,14 @@ const App = () => {
           );
           animation: shimmer-sweep 4s ease-in-out infinite;
           z-index: 9999;
+        }
+        .sparkle {
+          position: fixed;
+          border-radius: 50%;
+          pointer-events: none;
+          z-index: 9998;
+          animation: twinkle ease-in-out infinite;
+          box-shadow: 0 0 4px 1px currentColor;
         }
       `}</style>
 
