@@ -89,6 +89,11 @@ const App = () => {
           0%, 100% { opacity: 0; transform: scale(0.5); }
           50% { opacity: 1; transform: scale(1); }
         }
+        @keyframes glitter-shift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
         .animate-float {
           animation: float ease-in-out infinite;
         }
@@ -159,7 +164,15 @@ const App = () => {
 
           {/* Headline */}
           <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-none">
-            Build{" "}
+            <span style={{
+              background: 'linear-gradient(135deg, #a855f7 0%, #c084fc 25%, #e879f9 40%, #a855f7 55%, #9333ea 70%, #d8b4fe 85%, #a855f7 100%)',
+              backgroundSize: '300% 300%',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              animation: 'glitter-shift 2s ease infinite',
+              filter: 'drop-shadow(0 0 8px rgba(168,85,247,0.8)) drop-shadow(0 0 20px rgba(168,85,247,0.5))',
+            }}>Build</span>{' '}
             <span
               style={{
                 color: "cyan",
