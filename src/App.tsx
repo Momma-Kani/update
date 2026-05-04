@@ -149,7 +149,10 @@ const App = () => {
             <button className="px-8 py-4 bg-gradient-to-r from-violet-500 to-pink-500 text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-violet-500/25">
               Start Creating
             </button>
-            <button className="px-8 py-4 border border-white/20 text-white font-semibold rounded-full transition-all duration-300 hover:bg-white/5">
+            <button
+              onClick={() => document.getElementById('examples')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-4 border border-white/20 text-white font-semibold rounded-full transition-all duration-300 hover:bg-white/5"
+            >
               See Examples ↓
             </button>
           </div>
